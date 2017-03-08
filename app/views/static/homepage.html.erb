@@ -1,0 +1,6 @@
+<% provide(:title, 'Homepage')%>
+<h1>The Ideas App</h1>
+<p>Welcome <% if user_signed_in? %>
+  <%= current_user.email %>
+  <% end %>
+</p>

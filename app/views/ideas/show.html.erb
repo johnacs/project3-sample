@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @idea.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @idea.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @idea.picture %>
+</p>
+
+<% if current_user%>
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>
+<%end%>
+
+<%= @tags.each do |tag| %>
+<button type="button" name="button" class="btn" style="background-color:<%= tag.color%>">
+  <span class="glyphicon glyphicon-align-left" aria-hidden = "true"></span>
+  <%= tag.name %>
+</button>
+<% end %>
+
+<pre><%= @tags.to_a %></pre>
