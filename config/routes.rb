@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   # get 'static#about', as: 'about' #or
   get 'about' => 'static#about'
+  get 'tags/index' => 'tags#index'
 
   root "static#homepage"
 end
